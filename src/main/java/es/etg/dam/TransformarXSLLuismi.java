@@ -11,6 +11,7 @@ import javax.xml.transform.stream.StreamSource;
 
 public class TransformarXSLLuismi {
     public static void transformarXMLaHTML() {
+        // Rutas archivos
         String xmlFile = "src/main/resources/videojuegosLuismi.xml";
         String xsltFile = "src/main/resources/videojuegosLuismi.xsl";
         String htmlFile = "src/main/resources/videojuegosLuismi.html";

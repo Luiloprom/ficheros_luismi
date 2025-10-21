@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Videojuegos>
+    <Videojuego>
+        <Codigo>1001</Codigo>
+        <Nombre>Minecraft</Nombre>
+        <Plataforma>PC</Plataforma>
+        <Precio>26.95</Precio>
+        <Año>2011</Año>
+    </Videojuego>
+    <Videojuego>
+        <Codigo>1002</Codigo>
+        <Nombre>The Witcher 3</Nombre>
+        <Plataforma>PC</Plataforma>
+        <Precio>39.99</Precio>
+        <Año>2015</Año>
+    </Videojuego>
+    <Videojuego>
+        <Codigo>1003</Codigo>
+        <Nombre>Halo Infinite</Nombre>
+        <Plataforma>Xbox</Plataforma>
+        <Precio>59.99</Precio>
+        <Año>2021</Año>
+    </Videojuego>
+    <Videojuego>
+        <Codigo>1004</Codigo>
+        <Nombre>FIFA 23</Nombre>
+        <Plataforma>PS5</Plataforma>
+        <Precio>49.99</Precio>
+        <Año>2022</Año>
+    </Videojuego>
+    <Videojuego>
+        <Codigo>1005</Codigo>
+        <Nombre>Among Us</Nombre>
+        <Plataforma>PC</Plataforma>
+        <Precio>5.0</Precio>
+        <Año>2018</Año>
+    </Videojuego>
+</Videojuegos>

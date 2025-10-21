@@ -5,11 +5,13 @@ import java.io.File;
 import javax.swing.JOptionPane;
 
 public class AppLuismi {
+    // Ruta del resources
     private static final String RESOURCES_PATH = "src/main/resources";
 
     public static void main(String[] args) {
-        borrarArchivosResources();
+        borrarArchivosResources(); // Método para limpiar todos los archivos del resources menos el xsl
 
+        // Menu para mostrarlo con JOptionPane
         String menu = """
                 Selecciona una opcion:
                 1. Crear fichero videojuegos.dat
@@ -23,13 +25,12 @@ public class AppLuismi {
         while (true) {
             String input = JOptionPane.showInputDialog(menu);
             if (input == null)
-                break; // usuario canceló
-
+                break; // Por si el usuario cancela
             switch (input) {
-                case "1" -> {
+                case "1" -> { // CrearFichero, Método para crear el fichero .dat
                     JOptionPane.showMessageDialog(null, CrearFicheroLuismi.crearFichero());
                 }
-                case "2" -> {
+                case "2" -> { // ModificarFichero. Método para modificar un videojuego
                     String codigoStr = JOptionPane.showInputDialog("Introduce código del videojuego a modificar:");
                     String nuevoNombre = JOptionPane.showInputDialog("Nuevo nombre:");
                     String nuevaPlataforma = JOptionPane.showInputDialog("Nueva plataforma:");
@@ -45,25 +46,25 @@ public class AppLuismi {
                         JOptionPane.showMessageDialog(null, "Datos numéricos no válidos.");
                     }
                 }
-                case "3" -> {
+                case "3" -> { // CrearFicheroXML. Método para crear el fichero XML
                     JOptionPane.showMessageDialog(null, CrearFicheroXMLLuismi.crearFicheroXML());
                 }
-                case "4" -> {
+                case "4" -> { // Método para leer con DOM
                     LeerFicheroXMLLuismi.leerDOM();
                     JOptionPane.showMessageDialog(null, "Lectura con DOM finalizada. Revisa consola.");
                 }
-                case "5" -> {
+                case "5" -> { // Método para leer con SAX
                     LeerFicheroXMLLuismi.leerSAX();
                     JOptionPane.showMessageDialog(null, "Lectura con SAX finalizada. Revisa consola.");
                 }
-                case "6" -> {
+                case "6" -> { // Método para generar HTML
                     TransformarXSLLuismi.transformarXMLaHTML();
                     JOptionPane.showMessageDialog(null, "Transformación a HTML finalizada.");
                 }
-                case "7" -> {
+                case "7" -> { // Método para salir
                     JOptionPane.showMessageDialog(null, "Saliendo...");
                     System.exit(0);
-                }
+                } // Por si seleciona una opción no válida
                 default -> JOptionPane.showMessageDialog(null, "Opción no válida");
             }
         }
@@ -72,14 +73,11 @@ public class AppLuismi {
     // Metodo para limpiar los archivos generados anteriormente
     public static void borrarArchivosResources() {
         File carpeta = new File(RESOURCES_PATH);
-        if (!carpeta.exists() || !carpeta.isDirectory()) {
-            System.out.println("La carpeta resources no existe o no es un directorio.");
-            return;
-        }
         File[] archivos = carpeta.listFiles();
         if (archivos != null) {
             for (File archivo : archivos) {
-                if (archivo.isFile() && !archivo.getName().endsWith("xsl")) {
+                if (archivo.isFile() && !archivo.getName().endsWith("xsl")) { // Me aseguro de que no elimine el archivo
+                                                                              // xsl
                     if (archivo.delete()) {
                         System.out.println("Borrado: " + archivo.getName());
                     } else {

@@ -31,9 +31,11 @@ public class LeerFicheroXMLLuismi {
 
             doc.getDocumentElement().normalize();
 
-            NodeList lista = doc.getElementsByTagName("Videojuego");
+            NodeList lista = doc.getElementsByTagName("Videojuego"); // Cogemos los hijos de videojuego que son los
+                                                                     // videojuegos
             System.out.println("----- Lectura con DOM -----");
-            for (int i = 0; i < lista.getLength(); i++) {
+            for (int i = 0; i < lista.getLength(); i++) { // Recoremos la lista de nodos y los vamos mostrando por
+                                                          // pantalla
                 Node node = lista.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element e = (Element) node;

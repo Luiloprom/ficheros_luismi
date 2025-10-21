@@ -3,6 +3,7 @@ package es.etg.dam;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+// Uso lombok para que me genere el constructor y los getter y setter automaticamente
 @Data
 @AllArgsConstructor
 public class VideojuegoLuismi {

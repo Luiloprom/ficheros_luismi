@@ -14,11 +14,13 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class CrearFicheroXMLLuismi {
+    // Rutas archivos
     private static final String DAT_FILE = "src/main/resources/videojuegosLuismi.dat";
     private static final String XML_FILE = "src/main/resources/videojuegosLuismi.xml";
 
-    public static String crearFicheroXML() {
-        String resultado;
+    public static String crearFicheroXML() { // Método para crear fichero XML
+        String resultado; // Para devolver algun resultado al App
+
         try (RandomAccessFile raf = new RandomAccessFile(DAT_FILE, "r")) {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -27,7 +29,7 @@ public class CrearFicheroXMLLuismi {
             Element root = doc.createElement("Videojuegos");
             doc.appendChild(root);
 
-            while (raf.getFilePointer() < raf.length()) {
+            while (raf.getFilePointer() < raf.length()) { // Leemos todo el dat con el random
                 int codigo = raf.readInt();
                 String nombre = raf.readUTF();
                 String plataforma = raf.readUTF();
@@ -36,6 +38,7 @@ public class CrearFicheroXMLLuismi {
 
                 Element videojuego = doc.createElement("Videojuego");
 
+                // He creado un método para no repetir tanto código al crear los elementos
                 crearElemento(doc, videojuego, "Codigo", String.valueOf(codigo));
                 crearElemento(doc, videojuego, "Nombre", nombre);
                 crearElemento(doc, videojuego, "Plataforma", plataforma);
@@ -57,6 +60,7 @@ public class CrearFicheroXMLLuismi {
         return resultado;
     }
 
+    // Método para crear elementos
     private static void crearElemento(Document doc, Element padre, String nombreElemento, String valor) {
         Element elemento = doc.createElement(nombreElemento);
         elemento.setTextContent(valor);
