@@ -39,7 +39,7 @@ public class LeerFicheroXMLLuismi {
                 Node node = lista.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element e = (Element) node;
-                    System.out.printf("Código: %s, Nombre: %s, Plataforma: %s, Precio: %s, Año: %s%n",
+                    System.out.printf("Codigo: %s, Nombre: %s, Plataforma: %s, Precio: %s, Año: %s%n",
                             e.getElementsByTagName("Codigo").item(0).getTextContent(),
                             e.getElementsByTagName("Nombre").item(0).getTextContent(),
                             e.getElementsByTagName("Plataforma").item(0).getTextContent(),
@@ -72,7 +72,7 @@ public class LeerFicheroXMLLuismi {
                 public void characters(char ch[], int start, int length) {
                     String value = new String(ch, start, length);
                     switch (ultimoElemento) {
-                        case "Codigo" -> System.out.print("Código: " + value + ", ");
+                        case "Codigo" -> System.out.print("Codigo: " + value + ", ");
                         case "Nombre" -> System.out.print("Nombre: " + value + ", ");
                         case "Plataforma" -> System.out.print("Plataforma: " + value + ", ");
                         case "Precio" -> System.out.print("Precio: " + value + ", ");

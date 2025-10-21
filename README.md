@@ -1,10 +1,30 @@
 # Documentacion del Proyecto: Gestion de Ficheros de Videojuegos
 
 ---
+# Índice
+
+- [Introducción](#introduccion)
+- [Datos Guardados](#datos-guardados)
+  - [Elemento principal](#elemento-principal)
+  - [Campos guardados](#campos-guardados)
+  - [Formatos](#formatos)
+- [Programas](#programas)
+  - [1. CrearFicheroLuismi.java](#1-crearFicheroLuismijava)
+  - [2. ModificarFicheroLuismi.java](#2-modificarFicheroLuismijava)
+  - [3. CrearFicheroXMLLuismi.java](#3-crearFicheroXMLLuismijava)
+  - [4. LeerFicheroXMLLuismi.java](#4-leerFicheroXMLLuismijava)
+  - [5. TransformarXSLLuismi.java](#5-transformarxslluismijava)
+  - [6. AppLuismi.java](#6-appluismijava)
+- [Ejemplo de Uso](#ejemplo-de-uso)
+- [Comentarios](#comentarios)
+- [Requisitos y Compilación](#requisitos-y-compilacion)
+- [Conclusión](#conclusion)
+
+---
 
 ## Introduccion
 
-Este proyecto permite la gestion y manipulacion de un archivo binario de videojuegos usando Java. Ademas, se soporta la conversion de este archivo binario a XML y HTML, lectura con DOM y SAX, y el uso de una interfaz grafica sencilla (`JOptionPane`) para operar todas las funcionalidades. El codigo completo esta disponible en el repositorio [GitHub - Luiloprom/ficheros_luismi](https://github.com/Luiloprom/ficheros_luismi.git).
+Este proyecto permite la gestion y manipulacion de un archivo binario de videojuegos usando Java. Ademas, se puede convertir de archivo binario a XML y HTML, lectura con DOM y SAX y el uso de (`JOptionPane`) para que se vea mas visual y se pueda probar todo junto. El proyecto tambien esta subido a mi GitHub [GitHub - Luiloprom/ficheros_luismi](https://github.com/Luiloprom/ficheros_luismi.git).
 
 ---
 
@@ -26,7 +46,7 @@ Este proyecto permite la gestion y manipulacion de un archivo binario de videoju
 
 ---
 
-## Programas y Su Funcionalidad
+## Programas
 
 
 ### 1. CrearFicheroLuismi.java
@@ -52,17 +72,11 @@ Busca un videojuego por codigo y modifica sus datos.
 
 
 **Comentarios:**
-// Se lee todo el fichero y se almacena en una lista de objetos `VideojuegoLuismi`
-// Si el codigo coincide, se modifican sus campos y se guarda en la lista.
-// Se reescribe todo el fichero con los datos actualizados y escribiendo la lista completa de nuevo.
-
-
-
->*Nota: La reescritura completa evita problemas con los Strings de tamano variable usando writeUTF.*
-
+-  Se lee todo el fichero y se almacena en una lista de objetos `VideojuegoLuismi`
+-  Si el codigo coincide, se modifican sus campos y se guarda en la lista.
+-  Se reescribe todo el fichero con los datos actualizados y escribiendo la lista completa de nuevo.
 
 ---
-
 
 ### 3. CrearFicheroXMLLuismi.java
 
@@ -72,8 +86,8 @@ Convierte el archivo binario en un archivo XML usando DOM.
 
 
 **Comentarios:**
-// Se recorre el fichero binario y para cada videojuego se crea un nodo XML
-// Se utiliza un metodo `crearElemento` para crear y anadir elementos hijos, evitando duplciar codigo
+-  Se recorre el fichero binario y para cada videojuego se crea un nodo XML
+-  Se utiliza un metodo `crearElemento` para crear y anadir elementos hijos, evitando duplciar codigo
 
 
 
@@ -89,8 +103,8 @@ Muestra el contenido del XML tanto con DOM como con SAX.
 
 
 **Comentarios:**
-// DOM: Recorre nodos y muestra campos por consola
-// SAX: Utiliza un flag string y switch-case para identificar y mostrar cada campo dinamicamente sin booleanos repetidos
+-  DOM: Recorre nodos y muestra campos por consola
+-  SAX: Utiliza un flag string y switch-case para identificar y mostrar cada campo dinamicamente sin booleanos repetidos
 
 
 > Para el apartado de SAX me he ayudado de la IA.
@@ -125,8 +139,8 @@ Menu grafico con `JOptionPane` para ejecutar todas las funcionalidades anteriore
 
 
 **Comentarios:**
-// Antes de mostrar el menu borra todos los ficheros de resources excepto el .xsl
-// El menu permite crear, modificar, exportar, leer (DOM/SAX), transformar y salir
+-  Antes de mostrar el menu borra todos los ficheros de resources excepto el .xsl
+-  El menu permite crear, modificar, exportar, leer (DOM/SAX), transformar y salir
 
 
 
@@ -165,23 +179,17 @@ Menu grafico con `JOptionPane` para ejecutar todas las funcionalidades anteriore
 - Java 8+
 - Maven instalado
 - Extensiones Java y Lombok activas en Visual Studio Code
-- Ejecutar por consola:
-mvn clean compile
-mvn exec:java -Dexec.mainClass="es.etg.dam.MainLuismi"
-
-
+- En visual abrir la carpeta raiz Ficheros_Luismi para ejecutar
+- Si no funciona el Lombok que es lo que uso para que me genere el constructor y los getter y setter borrar la dependencia del archivo pom
 
 ---
 
 
 ## Conclusion
 
+- He realizado este ejercicio ayudandome de la teoria, los ejercicios hechos en clase y en algunos casos me he ayudado de la IA para entender el codigo o que me ayudase con errores que ya no era capaz de solventar.
 
-Este proyecto demuestra una gestion completa de datos semiestructurados en Java:
-- Escritura y edicion en binario,
-- Exportacion y visualizacion XML (DOM/SAX),
-- Transformacion XSLT a HTML
-- Todo integrado con menu grafico simple.
+- Tambien he usado lombok, un proyecto maven, git y GitHub, y la documentacion esta hecha en markdown. Todo esto para practicar contenido de otras asignaturas e irme acostumbrando.
 
+> Perdon por las faltas de ortografia ya que al usar markdown no hay auto corrector y muchas no las he puesto
 
-El codigo esta preparado para ser educativo, facil de entender y ampliable para futuras mejoras.

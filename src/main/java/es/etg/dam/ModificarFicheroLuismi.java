@@ -45,7 +45,7 @@ public class ModificarFicheroLuismi {
         }
 
         if (!encontrado) { // Si encontrado no es true entonces no lo a encontrado y mostramos esto
-            System.out.println("No se encontró el código: " + codigoBuscado);
+            System.out.println("No se encontro el código: " + codigoBuscado);
             return; // Para que el programa siga ejecutandose aun con el error
         }
 

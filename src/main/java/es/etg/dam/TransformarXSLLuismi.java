@@ -24,7 +24,7 @@ public class TransformarXSLLuismi {
             Source text = new StreamSource(new File(xmlFile));
             transformer.transform(text, new StreamResult(new File(htmlFile)));
 
-            System.out.println("Transformación realizada: videojuegos.html creado en resources.");
+            System.out.println("Transformacion realizada: videojuegos.html creado en resources.");
         } catch (TransformerException e) {
             System.out.println("A ocurrido un error");
         }

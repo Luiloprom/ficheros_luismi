@@ -31,7 +31,7 @@ public class AppLuismi {
                     JOptionPane.showMessageDialog(null, CrearFicheroLuismi.crearFichero());
                 }
                 case "2" -> { // ModificarFichero. Método para modificar un videojuego
-                    String codigoStr = JOptionPane.showInputDialog("Introduce código del videojuego a modificar:");
+                    String codigoStr = JOptionPane.showInputDialog("Introduce codigo del videojuego a modificar:");
                     String nuevoNombre = JOptionPane.showInputDialog("Nuevo nombre:");
                     String nuevaPlataforma = JOptionPane.showInputDialog("Nueva plataforma:");
                     String precioStr = JOptionPane.showInputDialog("Nuevo precio:");
@@ -41,9 +41,9 @@ public class AppLuismi {
                         float precio = Float.parseFloat(precioStr);
                         int año = Integer.parseInt(añoStr);
                         ModificarFicheroLuismi.modificarRegistro(codigo, nuevoNombre, nuevaPlataforma, precio, año);
-                        JOptionPane.showMessageDialog(null, "Modificación finalizada.");
+                        JOptionPane.showMessageDialog(null, "Modificacion finalizada.");
                     } catch (NumberFormatException e) {
-                        JOptionPane.showMessageDialog(null, "Datos numéricos no válidos.");
+                        JOptionPane.showMessageDialog(null, "Datos numericos no validos.");
                     }
                 }
                 case "3" -> { // CrearFicheroXML. Método para crear el fichero XML
@@ -59,13 +59,13 @@ public class AppLuismi {
                 }
                 case "6" -> { // Método para generar HTML
                     TransformarXSLLuismi.transformarXMLaHTML();
-                    JOptionPane.showMessageDialog(null, "Transformación a HTML finalizada.");
+                    JOptionPane.showMessageDialog(null, "Transformacion a HTML finalizada.");
                 }
                 case "7" -> { // Método para salir
                     JOptionPane.showMessageDialog(null, "Saliendo...");
                     System.exit(0);
                 } // Por si seleciona una opción no válida
-                default -> JOptionPane.showMessageDialog(null, "Opción no válida");
+                default -> JOptionPane.showMessageDialog(null, "Opcion no valida");
             }
         }
     }
